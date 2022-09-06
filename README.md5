@@ -1,0 +1,25 @@
+Task from "Коммерц Group"
+
+Functionalities done:
+1. Created models EmployeeModel and BossModel.
+EmployeeModel holds information about a employee (id, employee full name, position, date of employment, wage, and his boss)
+BossModel holds information about a boss (boss_id and boss full name)
+
+2. Connected PostgreSQL to the project with corresponding tables.
+employee table's primary key is id
+boss table's primary key is boss_full_name
+
+3. Added some mock data
+
+4. Added "display employee list" functionality
+
+5. Added "sort employee list" functionality
+
+6. Added login and signup pages
+
+Need to add:
+1. 50,000 rows of data
+2. Login and Signup
+3. For authorized users, allow sorting data, searching employee by any field, and other CRUD operations for any field
+4. Use DB seeder for Django ORM
+5. Change function-based views to class-based views
