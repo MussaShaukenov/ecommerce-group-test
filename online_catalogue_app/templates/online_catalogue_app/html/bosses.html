@@ -1,0 +1,21 @@
+{% extends 'online_catalogue_app/html/base.html' %}
+
+{% block title %}
+     <title>Bosses List</title>
+{% endblock %}
+{% block content %}
+    <h2>Bosses list</h2>
+
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>Full name</th>
+    </tr>
+        {% for item in query_results %}
+     <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.boss_full_name }}</td>
+    </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

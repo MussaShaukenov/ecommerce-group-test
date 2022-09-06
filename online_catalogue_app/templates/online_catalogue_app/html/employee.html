@@ -1,0 +1,45 @@
+{% extends 'online_catalogue_app/html/base.html' %}
+
+
+{% block title %}
+     <title>Bosses List</title>
+{% endblock %}
+
+{% block content %}
+{% url "sort_by_name" as sort_by_name %}
+
+<h2 style="text-align: center">Employee list</h2> <br>
+<div style="margin-left: 50px">
+    <h4>Sort:</h4>
+    <a href="{{ sort_by_name }}">by Full name</a> <br>
+    <a href="{% url 'sort_by_doe' %}">by Date of Employment</a> <br>
+    <a href="{% url 'sort_by_wage' %}">by Wage amount</a> <br>
+</div>
+
+<table class="table" style="margin: 0 100px">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Position</th>
+      <th scope="col">Date of Employment</th>
+      <th scope="col">Wage</th>
+      <th scope="col">Boss's Full name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for emp in query_results %}
+    <tr>
+      <th scope="row">{{ emp.id }}</th>
+      <td>{{ emp.emp_full_name }}</td>
+      <td>{{ emp.position }}</td>
+      <td>{{ emp.date_of_employment }}</td>
+      <td>${{ emp.wage }}</td>
+      <td>{{ emp.boss_name_id }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+
