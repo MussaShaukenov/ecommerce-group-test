@@ -17,7 +17,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "online_catalogue_app"
+    'crispy_forms',
+    "online_catalogue_app",
+    'django_seed'
 ]
 
 MIDDLEWARE = [
@@ -91,3 +93,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

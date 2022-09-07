@@ -1,0 +1,17 @@
+<div style="margin-left: 50px">
+    <h4>Sort:</h4>
+    <ul>
+        <li><a href="{% url 'main:sort_by_name' %}" style="color: black">by Full name</a> <br></li>
+        <li><a href="{% url 'main:sort_by_name_reverse_order' %}" style="color: black">by Full name in Reverse order</a> <br></li>
+
+        <li><a href="{% url 'main:sort_by_doe' %}" style="color: black">by Date of Employment</a> <br></li>
+        <li><a href="{% url 'main:sort_by_doe_reverse_order' %}" style="color: black">by Date of Employment in Reverse order</a> <br></li>
+
+        <li><a href="{% url 'main:sort_by_wage' %}" style="color: black">by Wage amount</a> <br></li>
+        <li><a href="{% url 'main:sort_by_wage_reverse_order' %}" style="color: black">by Wage amount in Reverse order</a> <br></li>
+
+        <li><a href="{% url 'main:display_employee_full_info' %}" style="color: black">See all details</a></li>
+        <li><a href="{% url 'main:display_employee' %}" style="color: black">See less details</a></li>
+
+    </ul>
+</div>

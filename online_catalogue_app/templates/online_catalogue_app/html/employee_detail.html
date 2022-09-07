@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+{% url "sort_by_name" as sort_by_name %}
 
 <h2 style="text-align: center">Employee list</h2> <br>
 {% include 'online_catalogue_app/html/sort.html' %}
@@ -16,6 +17,8 @@
       <th scope="col">#</th>
       <th scope="col">Full name</th>
       <th scope="col">Position</th>
+      <th scope="col">Date of Employment</th>
+      <th scope="col">Wage</th>
       <th scope="col">Boss's Full name</th>
     </tr>
   </thead>
@@ -25,6 +28,8 @@
       <th scope="row">{{ emp.id }}</th>
       <td>{{ emp.emp_full_name }}</td>
       <td>{{ emp.position }}</td>
+      <td>{{ emp.date_of_employment }}</td>
+      <td>${{ emp.wage }}</td>
       <td>{{ emp.boss_name_id }}</td>
     </tr>
     {% endfor %}
@@ -32,4 +37,3 @@
 </table>
 
 {% endblock %}
-

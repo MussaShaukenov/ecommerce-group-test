@@ -1,6 +1,7 @@
-{% url "login" as login %}
-{% url "signup" as signup %}
-{% url "index" as homepage %}
+{% url "main:login" as login %}
+{% url "main:signup" as register %}
+{% url "main:index" as homepage %}
+{% url "main:display_employee" as emp_list %}
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,9 +12,16 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="{{ homepage }}">Home <span class="sr-only"></span></a>
-      <a class="nav-item nav-link" href="{% url 'display_employee' %}">Employee List</a>
-      <a class="nav-item nav-link" href="{{ signup }}">Sign up</a>
+      <a class="nav-item nav-link" href="{{ emp_list }}">Employee List</a>
+      <a class="nav-item nav-link" href="{{ register }}">Sign up</a>
       <a class="nav-item nav-link" href="{{ login }}">Login</a>
+    <form action="{% url 'main:search' %}" class="form-inline" method="get">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="" class="sr-only">Search</label>
+        <input name="search" type="" class="form-control" id="" placeholder="Keyword">
+      </div>
+        <button type="submit" class="btn btn-primary btn-lg mb-2">Search</button>
+   </form>
     </div>
   </div>
 </nav>

@@ -1,12 +1,14 @@
 {% extends 'online_catalogue_app/html/base.html' %}
 
 {% block title %}
-     <title>Bosses List</title>
+     <title>Sorted List</title>
 {% endblock %}
 
 {% block content %}
 
 <h2 style="text-align: center; margin-left: 50px">Sorted Employee list by Name</h2> <br>
+{% include 'online_catalogue_app/html/sort.html' %}
+
 
 <table class="table" style="margin: 0 100px">
   <thead>

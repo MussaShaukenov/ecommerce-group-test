@@ -1,14 +1,14 @@
 {% extends 'online_catalogue_app/html/base.html' %}
 
-
 {% block title %}
-     <title>Bosses List</title>
+     <title>Sorted List</title>
 {% endblock %}
 
 {% block content %}
 
-<h2 style="text-align: center">Employee list</h2> <br>
+<h2 style="text-align: center; margin-left: 50px">Sorted Employee list by Wage amount in Reverse order</h2> <br>
 {% include 'online_catalogue_app/html/sort.html' %}
+
 
 <table class="table" style="margin: 0 100px">
   <thead>
@@ -16,15 +16,19 @@
       <th scope="col">#</th>
       <th scope="col">Full name</th>
       <th scope="col">Position</th>
+      <th scope="col">Date of Employment</th>
+      <th scope="col">Wage</th>
       <th scope="col">Boss's Full name</th>
     </tr>
   </thead>
   <tbody>
-    {% for emp in query_results %}
+    {% for emp in sorted_list %}
     <tr>
       <th scope="row">{{ emp.id }}</th>
       <td>{{ emp.emp_full_name }}</td>
       <td>{{ emp.position }}</td>
+      <td>{{ emp.date_of_employment }}</td>
+      <td>${{ emp.wage }}</td>
       <td>{{ emp.boss_name_id }}</td>
     </tr>
     {% endfor %}
