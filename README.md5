@@ -13,7 +13,7 @@ boss table's primary key is boss_full_name
 
 4. Added "display employee list" functionality
 
-5. Added "sort employee list" functionality
+5. Added "sort employee list" and "sort employee list in reverse orders" functionality
 
 6. Added login and signup pages
 
