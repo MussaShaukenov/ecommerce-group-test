@@ -8,7 +8,13 @@
 {% block content %}
 
 <h2 style="text-align: center">Employee list</h2> <br>
-{% include 'online_catalogue_app/html/sort.html' %}
+
+        {% include 'online_catalogue_app/html/sort.html' %}
+
+    <ul style="margin-left: 50px;">
+        <li><a href="{% url 'main:display_employee_full_info' %}" style="color: black">See all details</a></li>
+    </ul>
+
 
 <table class="table" style="margin: 0 100px">
   <thead>
@@ -22,10 +28,10 @@
   <tbody>
     {% for emp in query_results %}
     <tr>
-      <th scope="row">{{ emp.id }}</th>
-      <td>{{ emp.emp_full_name }}</td>
-      <td>{{ emp.position }}</td>
-      <td>{{ emp.boss_name_id }}</td>
+      <th scope="row">{{ emp.id}}</th>
+      <td>{{ emp.emp_full_name|slice:":255" }}</td>
+      <td>{{ emp.position|slice:":255" }}</td>
+      <td>{{ emp.boss_name_id|slice:":255" }}</td>
     </tr>
     {% endfor %}
   </tbody>

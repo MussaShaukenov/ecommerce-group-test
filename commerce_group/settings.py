@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     "online_catalogue_app",
-    'django_seed'
+    'django_seed',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'commerce_group.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'commerce_group',
+        'NAME': 'ecommerce_group',
         'USER': 'mussa',
         'PASSWORD': '1234',
         'HOST': '127.0.0.1',

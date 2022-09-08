@@ -3,11 +3,9 @@ from .models import *
 from django.db.models import Q
 from . import forms
 from django_seed import Seed
-from random import randrange
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
-
 
 
 def index(request):
@@ -19,10 +17,11 @@ def seed_db(request):
     seeder.add_seeder()
 
 
-def display_employee(request):
+def display_employee(request, page=1):
     query_results = EmployeeModel.objects.all()
+
     context = {
-        "query_results": query_results
+        "query_results": query_results,
     }
 
     return render(request, 'online_catalogue_app/html/employee.html', context)

@@ -11,8 +11,7 @@ team_lead = 'TEAM-LEAD'
 
 
 class BossModel(models.Model):
-    id = models.IntegerField(auto_created=True, primary_key=True)
-    boss_full_name = models.CharField(max_length=255, null=False)
+    boss_full_name = models.CharField(max_length=255)
 
     class Meta:
         db_table = "boss_table"
@@ -42,6 +41,3 @@ class EmployeeModel(models.Model):
 
     class Meta:
         db_table = "employee_table"
-
-    def __str__(self):
-        return self.emp_full_name

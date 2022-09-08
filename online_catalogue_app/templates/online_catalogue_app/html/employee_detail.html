@@ -9,14 +9,17 @@
 {% url "sort_by_name" as sort_by_name %}
 
 <h2 style="text-align: center">Employee list</h2> <br>
-{% include 'online_catalogue_app/html/sort.html' %}
 
+        {% include 'online_catalogue_app/html/sort.html' %}
+      <ul style="margin-left: 50px;">
+        <li><a href="{% url 'main:display_employee' %}" style="color: black">See less details</a></li>
+      </ul>
 <table class="table" style="margin: 0 100px">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Full name</th>
-      <th scope="col">Position</th>
+      <th scope="col">Full name|slice:":255"</th>
+      <th scope="col">Position|slice:":255"</th>
       <th scope="col">Date of Employment</th>
       <th scope="col">Wage</th>
       <th scope="col">Boss's Full name</th>
