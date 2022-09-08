@@ -13,9 +13,9 @@ Run following commands:
  - open CMD/Terminal and type django-admin startproject “name of the project”
 
 4. Run these commands to seed database with data:
-   python manage.py seed online_catalogue_app --number=5000 --seeder "EmployeeModel.position" "intern"
-   python manage.py seed online_catalogue_app --number=5000 --seeder "EmployeeModel.position" "junior"
-   python manage.py seed online_catalogue_app --number=5000 --seeder "EmployeeModel.position" "middle"
+   python manage.py seed online_catalogue_app --number=15000 --seeder "EmployeeModel.position" "intern"
+   python manage.py seed online_catalogue_app --number=10000 --seeder "EmployeeModel.position" "junior"
+   python manage.py seed online_catalogue_app --number=10000 --seeder "EmployeeModel.position" "middle"
    python manage.py seed online_catalogue_app --number=5000 --seeder "EmployeeModel.position" "senior"
    python manage.py seed online_catalogue_app --number=5000 --seeder "EmployeeModel.position" "team-lead"
 
@@ -29,7 +29,7 @@ BossModel holds information about a boss (boss_id and boss full name)
 
 2. Connected PostgreSQL to the project with corresponding tables.
 employee table's primary key is id
-boss table's primary key is boss_full_name
+boss table's primary key is id
 
 3. Added some mock data
 
@@ -41,7 +41,7 @@ boss table's primary key is boss_full_name
 
 7. Seeded database with 50,000 data
 
-Need to add:
+Did not finish to add:
 1. Login and Signup
 2. For authorized users, allow sorting data, searching employee by any field, and other CRUD operations for any field
 

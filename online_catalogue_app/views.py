@@ -4,7 +4,7 @@ from django.db.models import Q
 from . import forms
 from django_seed import Seed
 from django.contrib import messages
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 
 
@@ -52,9 +52,9 @@ def login_employee(request):
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = authenticate(username, password)
-            if user is not None:
-                login(request, user)
+            employee = authenticate(username, password)
+            if employee is not None:
+                login(request, employee)
                 messages.info(request, f"You are now logged in as {username}.")
                 return redirect("main:display_employee")
             else:
@@ -86,6 +86,12 @@ def register_employee(request):
     }
 
     return render(request, 'online_catalogue_app/html/signup.html', context)
+
+
+def logout_employee(request):
+    logout(request)
+    messages.info(request, "You have successfully logged out.")
+    return redirect("main:homepage")
 
 
 def sort_emp_by_name(request):
